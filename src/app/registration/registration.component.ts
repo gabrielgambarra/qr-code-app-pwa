@@ -29,7 +29,7 @@ export class RegistrationComponent implements OnInit {
   onSubmit(): void {
     const guest = { ...this.registrationForm.value, id: uuid() };
     guest.qr = JSON.stringify(guest);
-    // this.guestService.addGuest(guest);
+    this.guestService.addGuest(guest);
     this.registrationForm.reset();
     this.router.navigate(["/guests"]);
   }
